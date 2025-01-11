@@ -24,7 +24,7 @@ class Html
       file.puts "<p>#{str}</p>"
     end
   end
-  
+
   def finish
     File.open(@page_name + ".html", "a") do |file|
       file.puts "</body>"
