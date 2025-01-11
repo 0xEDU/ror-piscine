@@ -1,6 +1,8 @@
 #!/usr/bin/ruby -w
 
 class Html
+  attr_reader :page_name
+
   def initialize(filename)
     @page_name = filename
     self.head
@@ -28,4 +30,11 @@ class Html
       file.puts "</body>"
     end
   end
+end
+
+if $PROGRAM_NAME == __FILE__
+  a = Html.new("test")
+  a.dump("Hello, World!")
+  a.dump("Hello, Ruby!")
+  a.finish
 end
