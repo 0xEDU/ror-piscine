@@ -130,7 +130,7 @@ class HtmlTest
   end
 
   def test_dump_body_already_closed
-    filename = 'test3'
+    filename = 'test2'
 
     File.delete(filename + '.html') if File.exist?(filename + '.html')
 
