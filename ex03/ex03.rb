@@ -49,6 +49,6 @@ if $PROGRAM_NAME == __FILE__
   body = Elem.new('body')
   title = Elem.new('title', Text.new('blah blah'))
   head.add_content(title)
-  html.add_content([head, title, body])
+  html.add_content([head, body])
   puts html
 end
