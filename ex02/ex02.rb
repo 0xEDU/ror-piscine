@@ -146,7 +146,7 @@ class HtmlTest
 end
 
 if $PROGRAM_NAME == __FILE__
-  puts "Testing ex01\n\n"
+  puts "Testing ex02\n\n"
 
   test = HtmlTest.new
   test.test_new
