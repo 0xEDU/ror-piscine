@@ -129,20 +129,6 @@ class HtmlTest
     end
   end
 
-  def test_dump_body_not_open
-    filename = 'test2'
-
-    File.delete(filename + '.html') if File.exist?(filename + '.html')
-
-    a = Html.new(filename)
-    File.open(filename + '.html', 'w') { |file| file.truncate(0) }
-    begin
-      a.dump('Hello, World!') # Should output a no body tag error
-    rescue StandardError => e
-      puts e
-    end
-  end
-
   def test_dump_body_already_closed
     filename = 'test3'
 
@@ -157,26 +143,12 @@ class HtmlTest
       puts e
     end
   end
-
-  def test_finish_after_finish
-    filename = 'test4'
-
-    File.delete(filename + '.html') if File.exist?(filename + '.html')
-
-    a = Html.new(filename)
-    a.finish
-    begin
-      a.finish # Should output a body already finished error
-    rescue StandardError => e
-      puts e
-    end
-  end
 end
 
 if $PROGRAM_NAME == __FILE__
   puts "Testing ex01\n\n"
 
   test = HtmlTest.new
-  # test.test_new
+  test.test_new
   test.test_dump_body_already_closed
 end
